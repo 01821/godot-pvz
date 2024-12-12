@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4pou7vwm4gg6"]
+
+[ext_resource type="Script" path="res://Scenes/Components/birth_sun_components.gd" id="1_pqf32"]
+
+[node name="BirthSunComponents" type="Node"]
+script = ExtResource("1_pqf32")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

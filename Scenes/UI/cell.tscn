@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2vygnk2eq31b"]
+
+[ext_resource type="Script" path="res://Scenes/UI/cell.gd" id="1_3well"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xbek"]
+
+[node name="Cell" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 73.0
+offset_bottom = 94.0
+script = ExtResource("1_3well")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_right = 73.0
+offset_bottom = 94.0
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xbek")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4xbek")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4xbek")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4xbek")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4xbek")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4xbek")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

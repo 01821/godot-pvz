@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5jigo7asjn77"]
+
+[ext_resource type="Script" path="res://Globals/scene_manager.gd" id="1_xcxop"]
+[ext_resource type="PackedScene" uid="uid://cbq77g2ft6j0u" path="res://Scenes/StartMenu/start_scene.tscn" id="2_o3h8i"]
+[ext_resource type="PackedScene" uid="uid://chewhhjhhaa5q" path="res://Scenes/StartMenu/start_menu.tscn" id="3_155yt"]
+[ext_resource type="PackedScene" uid="uid://dgphm0h17i4qk" path="res://Scenes/levels/level_1.tscn" id="4_c2jve"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_xcxop")
+sceneArray = Array[PackedScene]([ExtResource("2_o3h8i"), ExtResource("3_155yt"), ExtResource("4_c2jve")])

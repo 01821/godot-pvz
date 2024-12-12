@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="录制测试2"
+run/main_scene="res://Scenes/StartMenu/start_scene.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://Globals/scene_manager.tscn"
+CardTypeManager="*res://Globals/CardTypeManager.gd"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/size/always_on_top=true
+window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Plant"
+2d_physics/layer_3="Zombie"
+2d_physics/layer_4="Bullet"

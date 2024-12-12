@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1pybrekxpkba"]
+
+[ext_resource type="Script" path="res://Plants/plant_template.gd" id="1_rame0"]
+[ext_resource type="PackedScene" uid="uid://cblnkacdgfp7e" path="res://Scenes/Components/health_components.tscn" id="2_20c0y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqx7h"]
+
+[sub_resource type="Animation" id="Animation_q05pc"]
+resource_name = "Attack"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.2, 1.2, 1, 1), Color(1.5, 1.5, 1, 1), Color(1.5, 1.5, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4wv7h"]
+_data = {
+"Attack": SubResource("Animation_q05pc")
+}
+
+[node name="PlantTemplate" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mqx7h")
+script = ExtResource("1_rame0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4wv7h")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+disabled = true
+
+[node name="HealthComponents" parent="." instance=ExtResource("2_20c0y")]
