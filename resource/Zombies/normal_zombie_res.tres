@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ZombieRes" load_steps=2 format=3 uid="uid://c8lw4cgmfhamm"]
+
+[ext_resource type="Script" path="res://resource/Zombies/zombie_res.gd" id="1_kivh5"]
+
+[resource]
+script = ExtResource("1_kivh5")
+speed = 30
+max_health = 115
+damage = 20

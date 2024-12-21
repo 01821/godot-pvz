@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1pybrekxpkba"]
+
+[ext_resource type="Script" path="res://Scenes/Plants/plant_template.gd" id="1_nftsx"]
+[ext_resource type="PackedScene" uid="uid://b2ndpd378uvj5" path="res://Scenes/Components/health_component.tscn" id="2_bc3cl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqx7h"]
+
+[node name="PlantTemplate" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mqx7h")
+script = ExtResource("1_nftsx")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+disabled = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_bc3cl")]

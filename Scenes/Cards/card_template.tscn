@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://ch766204qmb1s"]
+
+[ext_resource type="Script" path="res://Scenes/Cards/card_template.gd" id="1_glnw1"]
+[ext_resource type="Script" path="res://StateMachine/state_machine.gd" id="2_yhmv2"]
+[ext_resource type="Script" path="res://Scenes/Cards/States/disable.gd" id="3_1ncc6"]
+[ext_resource type="Script" path="res://Scenes/Cards/States/cooling.gd" id="4_hr5x1"]
+[ext_resource type="Script" path="res://Scenes/Cards/States/waiting_sun.gd" id="5_q7eeb"]
+[ext_resource type="Script" path="res://Scenes/Cards/States/ready.gd" id="6_rhml4"]
+[ext_resource type="Script" path="res://Scenes/Cards/States/click.gd" id="7_6vlrs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilv24"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2l8i"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p1hp"]
+bg_color = Color(0, 0, 0, 0.72549)
+
+[node name="CardTemplate" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_glnw1")
+
+[node name="CardLight" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="CardLight"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 70.0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ilv24")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ilv24")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ilv24")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ilv24")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ilv24")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ilv24")
+
+[node name="CardDark" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardCool" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_d2l8i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5p1hp")
+value = 100.0
+fill_mode = 2
+show_percentage = false
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("init_state")]
+script = ExtResource("2_yhmv2")
+init_state = NodePath("Disable")
+
+[node name="Disable" type="Node" parent="StateMachine"]
+script = ExtResource("3_1ncc6")
+
+[node name="Cooling" type="Node" parent="StateMachine"]
+script = ExtResource("4_hr5x1")
+
+[node name="WaitingSun" type="Node" parent="StateMachine"]
+script = ExtResource("5_q7eeb")
+
+[node name="Ready" type="Node" parent="StateMachine"]
+script = ExtResource("6_rhml4")
+
+[node name="Click" type="Node" parent="StateMachine"]
+script = ExtResource("7_6vlrs")
+
+[connection signal="pressed" from="CardLight/Button" to="." method="_on_button_pressed"]

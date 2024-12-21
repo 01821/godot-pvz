@@ -1,0 +1,486 @@
+[gd_scene load_steps=24 format=3 uid="uid://dgphm0h17i4qk"]
+
+[ext_resource type="Script" path="res://Scenes/Manager/game_manager.gd" id="1_8wljv"]
+[ext_resource type="Script" path="res://Scenes/Manager/sun_manager.gd" id="1_e2wht"]
+[ext_resource type="Texture2D" uid="uid://4ic8m6ad25pf" path="res://textures/Images/Background/iPadHD1.png" id="1_o8jrb"]
+[ext_resource type="Script" path="res://Scenes/Manager/hand_manager.gd" id="2_5mljy"]
+[ext_resource type="Texture2D" uid="uid://beu4irqktr4rh" path="res://textures/Images/UI/ChooserBackground.png" id="2_rshtc"]
+[ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="3_c8psq"]
+[ext_resource type="Script" path="res://Scenes/levels/zombie_manager.gd" id="3_sk7yd"]
+[ext_resource type="PackedScene" uid="uid://bef68ir2rnf70" path="res://Scenes/Cards/SunFlower/sunFlower.tscn" id="3_uql73"]
+[ext_resource type="PackedScene" uid="uid://c4x7jlwywe134" path="res://Scenes/Cards/PeaShooter/pea_shooter.tscn" id="6_egttu"]
+[ext_resource type="Texture2D" uid="uid://dhli2elk8ve12" path="res://textures/Images/UI/StartPlant.png" id="7_nlswf"]
+[ext_resource type="Texture2D" uid="uid://b3bnnl62vhqrx" path="res://textures/Images/UI/StartReady.png" id="8_18lra"]
+[ext_resource type="PackedScene" uid="uid://cm1k4e8y4inxx" path="res://Scenes/UI/cell.tscn" id="8_qy7kv"]
+[ext_resource type="PackedScene" uid="uid://ogv7wh031duf" path="res://Scenes/Components/birth_sun_component.tscn" id="9_4q2ys"]
+[ext_resource type="Texture2D" uid="uid://cf3fyamrlyv2n" path="res://textures/Images/UI/StartSet.png" id="9_sieke"]
+[ext_resource type="Texture2D" uid="uid://ck7ie1330dlsi" path="res://textures/Images/UI/ZombiesWon.png" id="10_rpebv"]
+[ext_resource type="PackedScene" uid="uid://8h5v8vsucsov" path="res://Scenes/Cards/Nut/nut.tscn" id="14_djsaw"]
+
+[sub_resource type="Animation" id="Animation_dpiqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_haw25"]
+resource_name = "begin_show"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d5lxy"]
+_data = {
+"RESET": SubResource("Animation_dpiqq"),
+"begin_show": SubResource("Animation_haw25")
+}
+
+[sub_resource type="Animation" id="Animation_uffqr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_b1vdi"]
+resource_name = "failShow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cg8la"]
+_data = {
+"RESET": SubResource("Animation_uffqr"),
+"failShow": SubResource("Animation_b1vdi")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sc5r"]
+size = Vector2(86, 608)
+
+[node name="level1" type="Node2D"]
+
+[node name="Manager" type="Node" parent="."]
+
+[node name="GameManager" type="Node" parent="Manager" node_paths=PackedStringArray("camera", "begin_show_anim", "fail_show_anim", "UINode", "fail_area")]
+script = ExtResource("1_8wljv")
+camera = NodePath("../../UI/Camera2D")
+begin_show_anim = NodePath("../../UI/BeginShow/AnimationPlayer")
+fail_show_anim = NodePath("../../UI/FailShow/AnimationPlayer")
+UINode = NodePath("../../UI")
+fail_area = NodePath("../../FailArea")
+
+[node name="SunManager" type="Node" parent="Manager" node_paths=PackedStringArray("sun_label") groups=["SunManager"]]
+script = ExtResource("1_e2wht")
+start_sun = 250
+sun_label = NodePath("../../UI/ChooseCardBg/Sun_Label")
+
+[node name="HandManager" type="Node2D" parent="Manager" node_paths=PackedStringArray("Plants", "cells")]
+script = ExtResource("2_5mljy")
+Plants = NodePath("../../Plants")
+cells = NodePath("../../UI/Cells")
+
+[node name="ZombieManager" type="Node" parent="Manager" node_paths=PackedStringArray("Zombies")]
+script = ExtResource("3_sk7yd")
+Zombies = NodePath("../../Zombies")
+
+[node name="Bg" type="TextureRect" parent="."]
+offset_left = -176.0
+offset_top = -96.0
+offset_right = 1172.0
+offset_bottom = 644.0
+texture = ExtResource("1_o8jrb")
+expand_mode = 1
+
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("card_list", "ChooseCardBg") groups=["UI"]]
+script = ExtResource("3_c8psq")
+card_list = [NodePath("ChooseCardBg/CardUIList/SunFlower"), NodePath("ChooseCardBg/CardUIList/PeaShooter"), NodePath("ChooseCardBg/CardUIList/Nut")]
+ChooseCardBg = NodePath("ChooseCardBg")
+
+[node name="BeginShow" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect1" type="TextureRect" parent="UI/BeginShow"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -66.5
+offset_right = 150.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_sieke")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/BeginShow"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -66.5
+offset_right = 150.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_18lra")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/BeginShow"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -66.5
+offset_right = 150.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_nlswf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BeginShow"]
+libraries = {
+"": SubResource("AnimationLibrary_d5lxy")
+}
+
+[node name="FailShow" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/FailShow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -234.0
+offset_right = 282.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(282, 234)
+texture = ExtResource("10_rpebv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/FailShow"]
+libraries = {
+"": SubResource("AnimationLibrary_cg8la")
+}
+
+[node name="ChooseCardBg" type="TextureRect" parent="UI"]
+offset_top = -93.0
+offset_right = 522.0
+offset_bottom = -6.0
+texture = ExtResource("2_rshtc")
+
+[node name="CardUIList" type="HBoxContainer" parent="UI/ChooseCardBg"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 8.0
+offset_right = 512.0
+offset_bottom = 78.0
+theme_override_constants/separation = 54
+
+[node name="SunFlower" parent="UI/ChooseCardBg/CardUIList" instance=ExtResource("3_uql73")]
+layout_mode = 2
+
+[node name="PeaShooter" parent="UI/ChooseCardBg/CardUIList" instance=ExtResource("6_egttu")]
+layout_mode = 2
+
+[node name="Nut" parent="UI/ChooseCardBg/CardUIList" instance=ExtResource("14_djsaw")]
+layout_mode = 2
+
+[node name="Sun_Label" type="Label" parent="UI/ChooseCardBg"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -29.0
+offset_right = 77.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cells" type="GridContainer" parent="UI"]
+offset_left = 67.0
+offset_top = 103.0
+offset_right = 774.0
+offset_bottom = 582.0
+theme_override_constants/h_separation = 80
+theme_override_constants/v_separation = 100
+columns = 9
+
+[node name="Cell" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell2" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell3" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell4" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell5" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell6" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell7" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell8" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell9" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell10" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell11" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell12" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell13" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell14" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell15" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell16" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell17" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell18" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell19" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell20" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell21" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell22" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell23" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell24" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell25" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell26" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell27" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell28" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell29" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell30" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell31" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell32" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell33" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell34" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell35" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell36" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell37" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell38" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell39" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell40" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell41" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell42" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell43" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell44" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell45" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="BirthSunComponent" parent="UI" instance=ExtResource("9_4q2ys")]
+
+[node name="Camera2D" type="Camera2D" parent="UI"]
+offset = Vector2(400, 300)
+
+[node name="FailArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FailArea"]
+position = Vector2(-3, 310)
+shape = SubResource("RectangleShape2D_1sc5r")
+
+[node name="Plants" type="Node2D" parent="."]
+
+[node name="Zombies" type="Node2D" parent="."]
+
+[node name="SpawnZombieNode" type="Node2D" parent="Zombies"]
+position = Vector2(822, 123)
+
+[node name="SpawnZombieNode2" type="Node2D" parent="Zombies"]
+position = Vector2(822, 218)
+
+[node name="SpawnZombieNode3" type="Node2D" parent="Zombies"]
+position = Vector2(822, 317)
+
+[node name="SpawnZombieNode4" type="Node2D" parent="Zombies"]
+position = Vector2(822, 414)
+
+[node name="SpawnZombieNode5" type="Node2D" parent="Zombies"]
+position = Vector2(822, 507)

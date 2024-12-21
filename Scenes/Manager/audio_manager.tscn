@@ -1,0 +1,54 @@
+[gd_scene load_steps=14 format=3 uid="uid://dtn14wfxxwfga"]
+
+[ext_resource type="Script" path="res://Scenes/Manager/audio_manager.gd" id="1_whri7"]
+[ext_resource type="AudioStream" uid="uid://bdgn4sjkxhytx" path="res://textures/Audio/Music/bgm1.mp3" id="2_mjs71"]
+[ext_resource type="AudioStream" uid="uid://cbh71jkg4w03a" path="res://textures/Audio/Music/bgm4.mp3" id="3_hjtpn"]
+[ext_resource type="AudioStream" uid="uid://bb7q1mtttom21" path="res://textures/Audio/Sound/buttonclick.ogg" id="4_nt1iy"]
+[ext_resource type="AudioStream" uid="uid://cfljtp2c0hc80" path="res://textures/Audio/Sound/chomp.ogg" id="5_6fap4"]
+[ext_resource type="AudioStream" uid="uid://cyvicyrl7jhvn" path="res://textures/Audio/Sound/finalwave.ogg" id="6_xvvqq"]
+[ext_resource type="AudioStream" uid="uid://cmkqbm3c82n24" path="res://textures/Audio/Sound/losemusic.ogg" id="7_yo60n"]
+[ext_resource type="AudioStream" uid="uid://cl2yetad6bydy" path="res://textures/Audio/Sound/winmusic.ogg" id="8_fv6ap"]
+[ext_resource type="AudioStream" uid="uid://dk4264o0t16eg" path="res://textures/Audio/Sound/plant.ogg" id="9_g1hkr"]
+[ext_resource type="AudioStream" uid="uid://n20ynulno5lm" path="res://textures/Audio/Sound/shoot.mp3" id="10_r1eib"]
+[ext_resource type="AudioStream" uid="uid://b17hui0dvgxl" path="res://textures/Audio/Sound/readysetplant.ogg" id="11_i6rqg"]
+[ext_resource type="AudioStream" uid="uid://dr7vogtgquf3l" path="res://textures/Audio/Sound/awooga.ogg" id="12_i5xwo"]
+[ext_resource type="AudioStream" uid="uid://xpxp6k0nmg7e" path="res://textures/Audio/Sound/points.ogg" id="13_c41e0"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_whri7")
+
+[node name="Bgm1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mjs71")
+
+[node name="StartMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hjtpn")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nt1iy")
+
+[node name="Eat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6fap4")
+
+[node name="LastWave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xvvqq")
+
+[node name="FailMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yo60n")
+
+[node name="WinMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fv6ap")
+
+[node name="Plant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_g1hkr")
+
+[node name="Shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_r1eib")
+
+[node name="ReadyPlant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_i6rqg")
+
+[node name="ZombieFirstComing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_i5xwo")
+
+[node name="CollectSun" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_c41e0")

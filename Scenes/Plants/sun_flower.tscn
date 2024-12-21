@@ -1,0 +1,208 @@
+[gd_scene load_steps=28 format=3 uid="uid://8la23gfbglph"]
+
+[ext_resource type="PackedScene" uid="uid://b1pybrekxpkba" path="res://Scenes/Plants/plant_template.tscn" id="1_odcwo"]
+[ext_resource type="Texture2D" uid="uid://1wy13rxevc5s" path="res://textures/Images/Plants/SunFlower_1-sheet2.png" id="2_vswoo"]
+[ext_resource type="Script" path="res://Scenes/Plants/sun_flower.gd" id="3_sjcal"]
+[ext_resource type="PackedScene" uid="uid://ogv7wh031duf" path="res://Scenes/Components/birth_sun_component.tscn" id="3_wt4nt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5hmt"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(0, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocqcy"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(73, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjtim"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(146, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs833"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(219, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gerf7"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(292, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gef0i"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(365, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwmoh"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(438, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfeyh"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(511, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfduj"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(584, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4504"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(657, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e38g"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(730, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kprla"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(803, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ot5"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(876, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxtwp"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(949, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnwjf"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(1022, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yghl1"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(1095, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yum4y"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(1168, 0, 73, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lndah"]
+atlas = ExtResource("2_vswoo")
+region = Rect2(1241, 0, 73, 74)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1cdy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5hmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocqcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjtim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs833")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gerf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gef0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwmoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfeyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfduj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4504")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e38g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kprla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ot5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxtwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnwjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yghl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yum4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lndah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_ar8ww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kpc2v"]
+resource_name = "birth_sun"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.2, 1.2, 1, 1), Color(1.5, 1.5, 1, 1), Color(1.5, 1.5, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_create_sun"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fwix"]
+_data = {
+"RESET": SubResource("Animation_ar8ww"),
+"birth_sun": SubResource("Animation_kpc2v")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wvaym"]
+radius = 33.3766
+
+[node name="SunFlower" instance=ExtResource("1_odcwo")]
+sprite_frames = SubResource("SpriteFrames_r1cdy")
+script = ExtResource("3_sjcal")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_5fwix")
+}
+
+[node name="BirthSunComponent" parent="." index="1" instance=ExtResource("3_wt4nt")]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_wvaym")

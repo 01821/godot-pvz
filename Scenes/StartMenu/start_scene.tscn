@@ -1,0 +1,259 @@
+[gd_scene load_steps=14 format=3 uid="uid://cbq77g2ft6j0u"]
+
+[ext_resource type="Texture2D" uid="uid://b5k4u1s0i5wvn" path="res://textures/Images/Background/titlescreen.jpg" id="1_vf62c"]
+[ext_resource type="Script" path="res://Scenes/StartMenu/start_scene.gd" id="1_xemlt"]
+[ext_resource type="Texture2D" uid="uid://h8egiicmf06h" path="res://textures/Images/UI/PvZ_Logo.png" id="2_cnk6n"]
+[ext_resource type="PackedScene" uid="uid://chewhhjhhaa5q" path="res://Scenes/StartMenu/start_menu.tscn" id="2_qjuki"]
+[ext_resource type="Texture2D" uid="uid://cf3axje8p4p6v" path="res://textures/Images/UI/LoadBar_dirt.png" id="3_i6qoy"]
+[ext_resource type="Texture2D" uid="uid://dfvs007edeii1" path="res://textures/Images/Background/menu.png" id="3_s7px0"]
+[ext_resource type="Texture2D" uid="uid://dnywba0popc0o" path="res://textures/Images/UI/LoadBar_grass.png" id="4_a8fv0"]
+[ext_resource type="Texture2D" uid="uid://4kv0l2vlceso" path="res://textures/Images/UI/SodRollCap.png" id="5_buniw"]
+[ext_resource type="Texture2D" uid="uid://bvdeniw81wkk1" path="res://textures/Images/UI/icon.png" id="7_0ga0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0aih6"]
+
+[sub_resource type="Animation" id="Animation_jpshd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RollCap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 483)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RollCap:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RollCap:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LoadBar_grass:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 40)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Zombie_head:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(476, 537)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Start_Label:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_j7611"]
+resource_name = "start_scene"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RollCap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(240, 483), Vector2(510, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RollCap:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RollCap:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LoadBar_grass:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(315, 30)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Zombie_head:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(476, 537), Vector2(476, 509)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Start_Label:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ywdsd"]
+_data = {
+"RESET": SubResource("Animation_jpshd"),
+"start_scene": SubResource("Animation_j7611")
+}
+
+[node name="StartScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xemlt")
+start_menu = ExtResource("2_qjuki")
+
+[node name="Bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vf62c")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 3.0
+offset_right = 794.0
+offset_bottom = 127.0
+texture = ExtResource("2_cnk6n")
+
+[node name="Zombie_head" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 537.0
+offset_right = 516.0
+offset_bottom = 577.0
+texture = ExtResource("7_0ga0x")
+
+[node name="LoadBar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 537.0
+offset_right = 565.0
+offset_bottom = 590.0
+texture = ExtResource("3_i6qoy")
+
+[node name="LoadBar_grass" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 517.0
+offset_right = 240.0
+offset_bottom = 557.0
+texture = ExtResource("4_a8fv0")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="RollCap" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 483.0
+offset_right = 313.0
+offset_bottom = 554.0
+pivot_offset = Vector2(36, 35)
+texture = ExtResource("5_buniw")
+
+[node name="Start_Label" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 0.345098, 1)
+layout_mode = 0
+offset_left = 253.0
+offset_top = 544.0
+offset_right = 543.0
+offset_bottom = 575.0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0aih6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0aih6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0aih6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0aih6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0aih6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0aih6")
+text = "点击开始"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ywdsd")
+}
+autoplay = "start_scene"
+
+[node name="Menu" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.32549)
+position = Vector2(400, 300)
+texture = ExtResource("3_s7px0")
+
+[connection signal="pressed" from="Start_Label" to="." method="_on_start_label_pressed"]

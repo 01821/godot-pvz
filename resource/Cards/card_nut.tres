@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="cardRes" load_steps=6 format=3 uid="uid://blt2re733hnrs"]
+
+[ext_resource type="Script" path="res://resource/Cards/cardRes.gd" id="1_6n0nr"]
+[ext_resource type="Texture2D" uid="uid://pgh33by3w27u" path="res://textures/Images/Card/card_wallnut2.png" id="1_aa3yt"]
+[ext_resource type="Texture2D" uid="uid://v1tl4o78av0t" path="res://textures/Images/Card/card_wallnut.png" id="2_5pguo"]
+[ext_resource type="Texture2D" uid="uid://c8o3spgxoepin" path="res://textures/Images/Plants/WallNut_1.png" id="3_mw3ne"]
+[ext_resource type="PackedScene" uid="uid://6ha4win3eft1" path="res://Scenes/Plants/nut.tscn" id="4_0ibby"]
+
+[resource]
+script = ExtResource("1_6n0nr")
+sun_num = 50
+cool_time = 5.0
+card_light = ExtResource("2_5pguo")
+card_dark = ExtResource("1_aa3yt")
+max_health = 1000
+card_shadow = ExtResource("3_mw3ne")
+card_type = 2
+plant_scene = ExtResource("4_0ibby")

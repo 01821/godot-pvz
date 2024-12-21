@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcw4kcqstgwtc"]
+
+[ext_resource type="Script" path="res://StateMachine/state_machine.gd" id="1_djtb7"]
+[ext_resource type="Script" path="res://Scenes/Zombies/zombie_template.gd" id="1_svsxm"]
+[ext_resource type="Script" path="res://Scenes/Zombies/States/stop.gd" id="2_o5x1u"]
+[ext_resource type="Script" path="res://Scenes/Zombies/States/move.gd" id="3_2qim3"]
+[ext_resource type="Script" path="res://Scenes/Zombies/States/eat.gd" id="4_jv2ns"]
+[ext_resource type="Script" path="res://Scenes/Zombies/States/not_head_move.gd" id="5_8cxdb"]
+[ext_resource type="Script" path="res://Scenes/Zombies/States/not_head_eat.gd" id="6_spx0q"]
+[ext_resource type="Script" path="res://Scenes/Zombies/States/dead.gd" id="7_k7mxw"]
+[ext_resource type="PackedScene" uid="uid://b2ndpd378uvj5" path="res://Scenes/Components/health_component.tscn" id="9_j3plr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tyvl"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Eat",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"NotHeadEat",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"NotHeadMove",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Stop",
+"speed": 5.0
+}]
+
+[node name="ZombieTemplate" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8tyvl")
+animation = &"Dead"
+script = ExtResource("1_svsxm")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("init_state")]
+script = ExtResource("1_djtb7")
+init_state = NodePath("Move")
+
+[node name="Stop" type="Node" parent="StateMachine"]
+script = ExtResource("2_o5x1u")
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("3_2qim3")
+
+[node name="Eat" type="Node" parent="StateMachine"]
+script = ExtResource("4_jv2ns")
+
+[node name="NotHeadMove" type="Node" parent="StateMachine"]
+script = ExtResource("5_8cxdb")
+
+[node name="NotHeadEat" type="Node" parent="StateMachine"]
+script = ExtResource("6_spx0q")
+
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("7_k7mxw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-24, 0)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="HealthComponent" parent="." instance=ExtResource("9_j3plr")]
+
+[node name="EatTimer" type="Timer" parent="."]

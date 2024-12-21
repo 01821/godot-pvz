@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="cardRes" load_steps=6 format=3 uid="uid://xk7vw77raflw"]
+
+[ext_resource type="Script" path="res://resource/Cards/cardRes.gd" id="1_8ly21"]
+[ext_resource type="Texture2D" uid="uid://fdk6np68b6pm" path="res://textures/Images/Card/card_peashooter2.png" id="1_jhkfw"]
+[ext_resource type="Texture2D" uid="uid://v185ysm7caip" path="res://textures/Images/Plants/Peashooter_1.png" id="1_nmh5f"]
+[ext_resource type="Texture2D" uid="uid://cqnfr5a5tvdiu" path="res://textures/Images/Card/card_peashooter.png" id="1_o4ekg"]
+[ext_resource type="PackedScene" uid="uid://b8jgylss52iek" path="res://Scenes/Plants/pea_shooter.tscn" id="4_i87k2"]
+
+[resource]
+script = ExtResource("1_8ly21")
+sun_num = 100
+cool_time = 3.0
+card_light = ExtResource("1_o4ekg")
+card_dark = ExtResource("1_jhkfw")
+max_health = 100
+card_shadow = ExtResource("1_nmh5f")
+card_type = 1
+plant_scene = ExtResource("4_i87k2")
